@@ -18,8 +18,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_toEndof="@+id/img_item_club"
-        android:layout_toRightof="@+id/img_item_club"
+        android:layout_toEndOf="@+id/img_item_club"
+        android:layout_toRightOf="@+id/img_item_club"
         android:orientation="vertical">
 
         <TextView
@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:text="@string/club_name"/>
 
@@ -38,7 +38,6 @@
             android:ellipsize="end"
             android:maxLines="2"
             android:text="@string/detail"/>
-
         </LinearLayout>
 
 </LinearLayout>

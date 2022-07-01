@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "818882319637",
+    "project_id": "tugasuasmt",
+    "storage_bucket": "tugasuasmt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818882319637:android:330dd2873a12025a8fc51c",
+        "android_client_info": {
+          "package_name": "com.example.ligachampion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "818882319637-1ht86m4jbv98v0qt15le2banehkhmplf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTZcLZglIsT76KMwlQdwCSZkSzbZnKgt8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "818882319637-1ht86m4jbv98v0qt15le2banehkhmplf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

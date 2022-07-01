@@ -1,8 +1,5 @@
 package com.example.ligachampion;
 
-
-import android.graphics.drawable.Drawable;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,38 +10,47 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.RequestBuilder;
-import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.request.RequestOptions;
-import com.google.android.material.behavior.SwipeDismissBehavior;
 
-import org.w3c.dom.Text;
-
-import java.security.AccessController;
 import java.util.ArrayList;
-import java.util.List;
 
 
-public class ListClubAdapter extends RecyclerView.Adapter<ListClubAdapter.ListViewHolder {
+public class ListClubAdapter extends RecyclerView.Adapter<ListClubAdapter.ListViewHolder> {
     private ArrayList<Club> listClub;
 
     public ListClubAdapter(ArrayList<Club> list) {
         this.listClub = list;
     }
+
+    private OnItemClickCallback onItemClickCallback;
+    public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback){
+        this.onItemClickCallback = onItemClickCallback;
+    }
+
     @NonNull
     @Override
     public ListClubAdapter.ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_club,parent, false)
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_club,parent, false);
         return new ListViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder (@NonNull ListViewHolder holder, int position) {
         Club club = listClub.get(position);
-        Glide.with(holder.itemView.getContext()) RequestManager
-            .load(club.getPhoto())RequestBuilder<Drawable>
-            .apply(new RequestOptions().override( width; 50, height; 50))
+        Glide.with(holder.itemView.getContext())
+            .load(club.getPhoto())
+            .apply(new RequestOptions().override(  50,  50))
             .into(holder.imgPhoto);
+
+        holder.tvName.setText(club.getName());
+        holder.tvDetail.setText(club.getDetail());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onItemClickCallback.onItemClicked(listClub.get(holder.getAdapterPosition()));
+            }
+        });
 
     }
 

@@ -3,6 +3,7 @@ package com.example.ligachampion;
 public class Club {
     private String name;
     private String detail;
+    private String link;
     private int photo;
 
     public String getName() {
@@ -28,4 +29,14 @@ public class Club {
     public void setPhoto(int photo) {
         this.photo = photo;
     }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+
 }

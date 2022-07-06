@@ -1,5 +1,6 @@
 package com.example.ligachampion;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,9 +17,11 @@ import java.util.ArrayList;
 
 
 public class ListClubAdapter extends RecyclerView.Adapter<ListClubAdapter.ListViewHolder> {
+    private Context context;
     private ArrayList<Club> listClub;
 
-    public ListClubAdapter(ArrayList<Club> list) {
+    public ListClubAdapter(Context context, ArrayList<Club> list) {
+        this.context = context;
         this.listClub = list;
     }
 
@@ -38,7 +41,7 @@ public class ListClubAdapter extends RecyclerView.Adapter<ListClubAdapter.ListVi
     public void onBindViewHolder (@NonNull ListViewHolder holder, int position) {
         Club club = listClub.get(position);
         Glide.with(holder.itemView.getContext())
-            .load(club.getPhoto())
+            .load(club.getLogo())
             .apply(new RequestOptions().override(  50,  50))
             .into(holder.imgPhoto);
 

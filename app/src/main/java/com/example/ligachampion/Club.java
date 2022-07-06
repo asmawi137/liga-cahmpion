@@ -2,9 +2,19 @@ package com.example.ligachampion;
 
 public class Club {
     private String name;
-    private String detail;
+    private String logo;
     private String link;
-    private int photo;
+    private String detail;
+
+    public Club() {
+    }
+
+    public Club(String name, String logo, String link, String detail) {
+        this.name = name;
+        this.logo = logo;
+        this.link = link;
+        this.detail = detail;
+    }
 
     public String getName() {
         return name;
@@ -14,20 +24,12 @@ public class Club {
         this.name = name;
     }
 
-    public String getDetail() {
-        return detail;
+    public String getLogo() {
+        return logo;
     }
 
-    public void setDetail(String detail) {
-        this.detail = detail;
-    }
-
-    public int getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(int photo) {
-        this.photo = photo;
+    public void setLogo(String logo) {
+        this.logo = logo;
     }
 
     public String getLink() {
@@ -38,5 +40,11 @@ public class Club {
         this.link = link;
     }
 
+    public String getDetail() {
+        return detail;
+    }
 
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
 }

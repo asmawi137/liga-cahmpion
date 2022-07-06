@@ -25,7 +25,7 @@ public class DetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_NAME = "extra_name";
     public static final String EXTRA_DETAIL = "extra_detail";
-    public static final String EXTRA_PHOTO = "extra_photo";
+    public static final String EXTRA_LOGO = "extra_logo";
     public static final String EXTRA_LINK = "extra_link";
 
     @Override
@@ -35,9 +35,9 @@ public class DetailActivity extends AppCompatActivity {
 
         Bundle intent = getIntent().getExtras();
 
-        int photo = intent.getInt(EXTRA_PHOTO,0);
         String name = intent.getString(EXTRA_NAME);
         String detail = intent.getString(EXTRA_DETAIL);
+        String logo = intent.getString(EXTRA_LOGO);
         String link = intent.getString(EXTRA_LINK);
 
         if (getSupportActionBar() !=null){
@@ -50,7 +50,7 @@ public class DetailActivity extends AppCompatActivity {
         tv_link = findViewById(R.id.detai_link);
 
         Glide.with(this)
-                .load(photo)
+                .load(logo)
                 .apply(new RequestOptions().override(  550,  550))
                 .into(imgPhoto);
 
